@@ -1,4 +1,3 @@
-import "../css/style.css";
-import{Menu, Name} from "./Menu";
-
-console.log(Menu, Name);
+document.querySelector(".btn").addEventListener("click", function(){
+    console.log("works")
+});
