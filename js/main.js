@@ -1,3 +1,2 @@
-document.querySelector(".btn").addEventListener("click", function(){
-    console.log("works")
-});
+import "../styles/style.css"
+console.log(menu);
