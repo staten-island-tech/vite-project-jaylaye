@@ -1,2 +1,51 @@
+/* @import (variables.css);  */
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
 
 
+body {
+    background-image: url('https://png.pngtree.com/background/20210715/original/pngtree-rustic-japanese-new-year-background-picture-image_1285666.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.rawr {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 45px;
+}
+
+
+.keke {
+    text-align: center;
+}
+
+
+.btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.btn img {
+    width: 100px;
+    height: auto;
+    margin-top: 5px;
+}
