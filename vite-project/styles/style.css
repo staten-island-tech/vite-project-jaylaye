@@ -54,7 +54,7 @@ body {
 .btn:hover{
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-    background-color: rgb(247, 229, 232);
+    background-color: rgb(252, 234, 220);
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     animation: bob 0.5s infinite alternate;
     border: 2px solid #d44747;
