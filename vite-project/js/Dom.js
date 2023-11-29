@@ -1,4 +1,4 @@
-const DOMselectors = {
+const DOMSelectors = {
     button1: document.getElementById("btn1"),
     button2: document.getElementById("btn2"),
     button3: document.getElementById("btn3"),
@@ -11,6 +11,7 @@ const DOMselectors = {
     button10: document.getElementById("btn10"),
     button11: document.getElementById("btn11"),
     box: document.getElementById("cardContainer"),
+    changeTheme: document.getElementById("theme"),
 };
 
-export { DOMselectors };
+export { DOMSelectors };

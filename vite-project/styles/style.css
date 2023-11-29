@@ -1,23 +1,14 @@
+:root {
+    --text-dark: #ffffff; 
+}
 
-
+/* General Styles */
 .main {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-
-
-body {
-    background-image: url('https://png.pngtree.com/background/20210715/original/pngtree-rustic-japanese-new-year-background-picture-image_1285666.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 0;
-    margin: 0;
-
-}
-
 
 .rawr {
     text-align: center;
@@ -26,12 +17,10 @@ body {
     font-family: 'Lora', serif;
 }
 
-
 .keke {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
 }
-
 
 .btn {
     padding: 10px;
@@ -41,17 +30,16 @@ body {
     font-size: 15px;
     margin: 10px;
     align-items: center;
-    flex-direction: column;
     text-align: center;
-    width: 150px;
+    width: 130px; 
     height: 140px;
     overflow: hidden;
     position: relative;
     background-color: rgb(252, 234, 220);
     font-family: 'Exo 2', sans-serif;
-  }
-  
-.btn:hover{
+}
+
+.btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
     background-color: rgb(252, 234, 220);
@@ -61,23 +49,63 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.5);
 }
-.btn:hover .btn img {
+
+.btn:hover img {
     transition: transform 0.2s ease-in-out;
 }
+
 .btn img {
     width: 70%;
     height: 60%;
     object-fit: cover;
     padding: 10px;
 }
-.theme{
+
+/* Theme Styles */
+.theme {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
     text-align: center;
+    flex-wrap: nowrap; 
 }
+
+body.light {
+    background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-cartoon-japanese-style-sushi-picture-image_1038623.jpg');
+    color: black; /* Set the text color for light mode */
+}
+
+body.dark-theme {
+    background-image: url('https://i.pinimg.com/736x/e1/20/4a/e1204a8fb9ef7bfd8397ed46af31f231.jpg');
+    color: var(--text-dark); /* Ensure text color is applied for dark mode */
+}
+
 .button-container {
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-  
+    text-align: center;
+    flex-wrap: wrap; 
+}
+
+/* Light Mode Styles */
+.light {
+    background-color: var(--primary);
+    --productBorderColor: var(--tertiary);
+    --productBackgroundColor: var(--tertiary);
+    --buttonBackgroundColor: var(--primary);
+    --buttonBorderColor: var(--tertiary);
+    --buttonTextColor: var(--secondary);
+    --productTextColor: var(--secondary);
+}
+
+/* Dark Mode Styles */
+.dark {
+    background-color: var(--secondary);
+    --productBorderColor: var(--tertiary);
+    --productBackgroundColor: var(--secondary);
+    --buttonBackgroundColor: var(--secondary);
+    --buttonBorderColor: var(--tertiary);
+    --buttonTextColor: var(--primary);
+    --productTextColor: var(--primary);
+}

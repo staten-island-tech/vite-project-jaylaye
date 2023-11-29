@@ -1,10 +1,24 @@
 import "../styles/style.css";
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
 import { menu } from "./menu";
-import { DOMselectors } from "./Dom";
+import { DOMSelectors } from "./Dom";
 
-// AOS.init();
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.btn');
+  const themeButton = document.getElementById('theme');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const category = this.id.substring(3).toLowerCase(); // Extract category from button ID
+      displayFoods(category);
+    });
+  });
+
+  themeButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    toggleTheme();
+  });
+});
+
 const buttons = {
   createCards: function () {
     menu.forEach((food) => {
@@ -14,38 +28,246 @@ const buttons = {
         <p>$${food.price}</p>
       </div>`;
 
-      console.log(cardHTML);
+      DOMSelectors.box.insertAdjacentHTML("beforeend", cardHTML);
+    });
+  },
 
-      DOMselectors.box.insertAdjacentHTML("beforeend", cardHTML);
+  filterAppetizers: function () {
+    menu
+      .filter((food) => food.category === "Appetizers")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterSoup: function () {
+    menu
+      .filter((food) => food.category === "Soup")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterSalads: function () {
+    menu
+      .filter((food) => food.category === "Salads")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+  filterMainDishes: function () {
+    menu
+      .filter((food) => food.category === "Main Dishes")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+  filterSpecials: function () {
+    menu
+      .filter((food) => food.category === "Specials")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterKidsMenu: function () {
+    menu
+      .filter((food) => food.category === "Kids Menu")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterChefRecommendations: function () {
+    menu
+      .filter((food) => food.category === "Chef Recommendations")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterDesserts: function () {
+    menu
+      .filter((food) => food.category === "Desserts")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterAlcoholicBeverages: function () {
+    menu
+      .filter((food) => food.category === "Alcoholic Beverages")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+  filterNonAlcoholic: function () {
+    menu
+      .filter((food) => food.category === "Non Alcoholic Beverages")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
+
+  remove: function () {
+    let cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+      card.remove();
     });
   },
 };
 
-buttons.createCards();
-
+function displayFoods(category) {
+  clearCards();
+  if (category === 'all') {
+    buttons.createCards();
+  } else {
+    buttons[`filter${capitalizeFirstLetter(category)}`]();
+  }
+}
 
 function clearCards() {
-  const container = DOMselectors.box;
+  const container = DOMSelectors.box;
   container.innerHTML = '';
 }
 
-function displayFoods() {
-  clearCards();
-  const appetizers = menu
-    .filter((menu) => menu.type === "app") 
-    .forEach((menu) =>
-      DOMSelectors.box.insertAdjacentHTML(
-        "beforeend",
-        `<div class="card">
-          <img class="card-img" src="${menu.image}" alt="${menu.foodName}">
-          <h2>${menu.foodName}</h2>
-          <p>${menu.price}</p>
-        </div>`
-      )
-    );
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function toggleTheme() {
+  setTimeout(() => {
+    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark-theme");
+  }, 0);
+}
 
-displayFoods();
+buttons.createCards();
 
+// Add event listeners for category buttons
+DOMSelectors.btn1.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('appetizers');
+});
 
+DOMSelectors.btn2.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('soup');
+});
+
+DOMSelectors.btn3.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Salads');
+});
+
+DOMSelectors.btn4.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Main Dishes');
+});
+
+DOMSelectors.btn5.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Specials');
+});
+
+DOMSelectors.btn6.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Side Dishes');
+});
+
+DOMSelectors.btn7.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Kids Menu');
+});
+
+DOMSelectors.btn8.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Chefs Recommendation');
+});
+
+DOMSelectors.btn9.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Dessert');
+});
+
+DOMSelectors.btn10.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Non-Alcoholic Beverages');
+});
+
+DOMSelectors.btn11.addEventListener("click", function () {
+  buttons.remove();
+  displayFoods('Alcoholic Beverages');
+});
