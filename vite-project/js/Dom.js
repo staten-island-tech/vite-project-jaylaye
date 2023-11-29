@@ -12,4 +12,5 @@ const DOMselectors = {
     button11: document.getElementById("btn11"),
     box: document.getElementById("cardContainer"),
 };
+
 export { DOMselectors };
