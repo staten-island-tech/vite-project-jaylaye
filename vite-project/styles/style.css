@@ -109,3 +109,39 @@ body.dark-theme {
     --buttonTextColor: var(--primary);
     --productTextColor: var(--primary);
 }
+
+.card {
+    border: 2px solid #333;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .card p {
+    margin: 5px 0;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+  
+  .inner {
+    border: 2px solid #666;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #e0e0e0;
+  }
+  
+  .inner p {
+    margin: 5px 0;
+  }
+  
+  .inner img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }

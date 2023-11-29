@@ -22,16 +22,16 @@ document.addEventListener('DOMContentLoaded', function () {
 const buttons = {
   createCards: function () {
     menu.forEach((food) => {
-      const cardHTML = `<div class="card" data-aos="flip-up">
-        <p>${food.foodName}</p>
-        <img src="${food.image}" alt="${food.foodName}">
-        <p>$${food.price}</p>
-      </div>`;
-
-      DOMSelectors.box.insertAdjacentHTML("beforeend", cardHTML);
+      DOMSelectors.box.insertAdjacentHTML(
+        "beforeend",
+        `<div class="inner" data-aos="flip-up">
+          <p>${food.foodName}</p>
+          <img src="${food.image}" alt="food" style="width: 100px; height: 100px;"></img>
+          <p>$${food.price}</p> 
+        </div>`
+      );
     });
   },
-
   filterAppetizers: function () {
     menu
       .filter((food) => food.category === "Appetizers")
@@ -217,57 +217,60 @@ function toggleTheme() {
 buttons.createCards();
 
 // Add event listeners for category buttons
-DOMSelectors.btn1.addEventListener("click", function () {
+// Add event listeners for category buttons
+DOMSelectors.button1.addEventListener("click", function () {
   buttons.remove();
   displayFoods('appetizers');
 });
 
-DOMSelectors.btn2.addEventListener("click", function () {
+DOMSelectors.button2.addEventListener("click", function () {
   buttons.remove();
   displayFoods('soup');
 });
 
-DOMSelectors.btn3.addEventListener("click", function () {
+DOMSelectors.button3.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Salads');
 });
 
-DOMSelectors.btn4.addEventListener("click", function () {
+DOMSelectors.button4.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Main Dishes');
 });
 
-DOMSelectors.btn5.addEventListener("click", function () {
+DOMSelectors.button5.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Specials');
 });
 
-DOMSelectors.btn6.addEventListener("click", function () {
+DOMSelectors.button6.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Side Dishes');
 });
 
-DOMSelectors.btn7.addEventListener("click", function () {
+DOMSelectors.button7.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Kids Menu');
 });
 
-DOMSelectors.btn8.addEventListener("click", function () {
+DOMSelectors.button8.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Chefs Recommendation');
 });
 
-DOMSelectors.btn9.addEventListener("click", function () {
+DOMSelectors.button9.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Dessert');
 });
 
-DOMSelectors.btn10.addEventListener("click", function () {
+DOMSelectors.button10.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Non-Alcoholic Beverages');
 });
 
-DOMSelectors.btn11.addEventListener("click", function () {
+DOMSelectors.button11.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Alcoholic Beverages');
 });
+
+console.log(menu);
