@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   buttons.forEach(button => {
     button.addEventListener('click', function () {
-      const category = this.id.substring(3).toLowerCase(); // Extract category from button ID
-      displayFoods(category);
+      const category = this.id.substring(3).toLowerCase(theme);
+      
     });
   });
 
@@ -105,6 +105,21 @@ const buttons = {
       });
   },
 
+  filterSideDishes: function () {
+    menu
+      .filter((food) => food.category == "Specials")
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+
   filterKidsMenu: function () {
     menu
       .filter((food) => food.category == "Kids Menu")
@@ -165,7 +180,7 @@ const buttons = {
       });
   },
 
-  filterNonAlcoholic: function () {
+  filternonAlc: function () {
     menu
       .filter((food) => food.category == "Non Alcoholic Beverages")
       .forEach((food) => {
@@ -174,7 +189,8 @@ const buttons = {
           `<div class="card">
             <p>${food.foodName}</p>
             <img src="${food.image}" alt="${food.foodName}">
-            <p>$${food.price}</p>
+            <p>${food.price}</p>
+            <h3>${food.category}</h3>
           </div>`
         );
       });
@@ -189,22 +205,9 @@ const buttons = {
   },
 };
 
-function displayFoods(category) {
-  clearCards();
-  if (category === 'all') {
-    buttons.createCards();
-  } else {
-    buttons[`filter${capitalizeFirstLetter(category)}`]();
-  }
-}
-
 function clearCards() {
   const container = DOMSelectors.box;
   container.cardsHTML = '';
-}
-
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function toggleTheme() {
@@ -224,7 +227,7 @@ DOMSelectors.button1.addEventListener("click", function () {
 
 DOMSelectors.button2.addEventListener("click", function () {
   buttons.remove();
-  buttons.filterSoups();
+  buttons.filterSoup();
 });
 
 DOMSelectors.button3.addEventListener("click", function () {
@@ -234,7 +237,6 @@ DOMSelectors.button3.addEventListener("click", function () {
 
 DOMSelectors.button4.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Main Dishes');
   buttons.filterMainDishes();
 });
 
@@ -265,7 +267,7 @@ DOMSelectors.button9.addEventListener("click", function () {
 
 DOMSelectors.button10.addEventListener("click", function () {
   buttons.remove();
-  buttons.filterNonAlcoholic();
+  buttons.filternonAlc();
 });
 
 DOMSelectors.button11.addEventListener("click", function () {

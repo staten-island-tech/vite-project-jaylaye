@@ -509,7 +509,7 @@ const menu = [
         kids: false,
         chefsRec: false,
         dessert: false,
-        image: "https://www.liquor.com/thmb/dxEIgDSkmAAUbWzJ9yi8Ws_J-v8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mai-tai-720x720-primary-e09e24f1cacd4b3896f5aa32ba51dcdd.jpg",
+        image: "https://www.platingsandpairings.com/wp-content/uploads/2020/07/mai-tai-cocktail-recipe-1460x2190.jpg",
       },
       {
         foodName: "Margarita",
