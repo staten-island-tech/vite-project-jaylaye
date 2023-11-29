@@ -24,7 +24,7 @@ const buttons = {
     menu.forEach((food) => {
       DOMSelectors.box.insertAdjacentHTML(
         "beforeend",
-        `<div class="inner" data-aos="flip-up">
+        `<div class="card" data-aos="flip-up">
           <p>${food.foodName}</p>
           <img src="${food.image}" alt="food" style="width: 100px; height: 100px;"></img>
           <p>$${food.price}</p> 
@@ -183,8 +183,8 @@ const buttons = {
 
   remove: function () {
     let cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-      card.remove();
+    cards.forEach((cards) => {
+      cards.remove();
     });
   },
 };
@@ -200,7 +200,7 @@ function displayFoods(category) {
 
 function clearCards() {
   const container = DOMSelectors.box;
-  container.innerHTML = '';
+  container.cardsHTML = '';
 }
 
 function capitalizeFirstLetter(string) {
@@ -217,60 +217,60 @@ function toggleTheme() {
 buttons.createCards();
 
 // Add event listeners for category buttons
-// Add event listeners for category buttons
 DOMSelectors.button1.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('appetizers');
+  buttons.filterAppetizers();
 });
 
 DOMSelectors.button2.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('soup');
+  buttons.filterSoups();
 });
 
 DOMSelectors.button3.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Salads');
+  buttons.filterSalads();
 });
 
 DOMSelectors.button4.addEventListener("click", function () {
   buttons.remove();
   displayFoods('Main Dishes');
+  buttons.filterMainDishes();
 });
 
 DOMSelectors.button5.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Specials');
+  buttons.filterSpecials();
 });
 
 DOMSelectors.button6.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Side Dishes');
+  buttons.filterSideDishes();
 });
 
 DOMSelectors.button7.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Kids Menu');
+  buttons.filterKidsMenu();
 });
 
 DOMSelectors.button8.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Chefs Recommendation');
+  buttons.filterChefRecommendations();
 });
 
 DOMSelectors.button9.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Dessert');
+  buttons.filterDesserts();
 });
 
 DOMSelectors.button10.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Non-Alcoholic Beverages');
+  buttons.filterNonAlcoholic();
 });
 
 DOMSelectors.button11.addEventListener("click", function () {
   buttons.remove();
-  displayFoods('Alcoholic Beverages');
+  buttons.filterAlcoholicBeverages();
 });
 
 console.log(menu);
