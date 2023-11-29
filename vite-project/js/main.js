@@ -34,7 +34,7 @@ const buttons = {
   },
   filterAppetizers: function () {
     menu
-      .filter((food) => food.category === "Appetizers")
+      .filter((food) => food.category == "Appetizers")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -49,7 +49,7 @@ const buttons = {
 
   filterSoup: function () {
     menu
-      .filter((food) => food.category === "Soup")
+      .filter((food) => food.category == "Soup")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -64,7 +64,7 @@ const buttons = {
 
   filterSalads: function () {
     menu
-      .filter((food) => food.category === "Salads")
+      .filter((food) => food.category == "Salads")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -78,7 +78,7 @@ const buttons = {
   },
   filterMainDishes: function () {
     menu
-      .filter((food) => food.category === "Main Dishes")
+      .filter((food) => food.category == "Main Dishes")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -92,7 +92,7 @@ const buttons = {
   },
   filterSpecials: function () {
     menu
-      .filter((food) => food.category === "Specials")
+      .filter((food) => food.category == "Specials")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -107,7 +107,7 @@ const buttons = {
 
   filterKidsMenu: function () {
     menu
-      .filter((food) => food.category === "Kids Menu")
+      .filter((food) => food.category == "Kids Menu")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -122,7 +122,7 @@ const buttons = {
 
   filterChefRecommendations: function () {
     menu
-      .filter((food) => food.category === "Chef Recommendations")
+      .filter((food) => food.category == "Chef Recommendations")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -137,7 +137,7 @@ const buttons = {
 
   filterDesserts: function () {
     menu
-      .filter((food) => food.category === "Desserts")
+      .filter((food) => food.category == "Desserts")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -152,7 +152,7 @@ const buttons = {
 
   filterAlcoholicBeverages: function () {
     menu
-      .filter((food) => food.category === "Alcoholic Beverages")
+      .filter((food) => food.category == "Alcoholic Beverages")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -167,7 +167,7 @@ const buttons = {
 
   filterNonAlcoholic: function () {
     menu
-      .filter((food) => food.category === "Non Alcoholic Beverages")
+      .filter((food) => food.category == "Non Alcoholic Beverages")
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
