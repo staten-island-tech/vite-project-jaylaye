@@ -73,7 +73,7 @@ const menu = [
     // ramens
     {
         foodName: "Classic Shoyu Ramen",
-        category: "Main Dishes",
+        category: "Main",
         price: 11.99,
         alcBev: false,
         nonAlc: false,
@@ -87,7 +87,7 @@ const menu = [
       },
       {
         foodName: "Spicy Miso Ramen",
-        category: "Main Dishes",
+        category: "Main",
         price: 13.99,
         alcBev: false,
         nonAlc: false,
@@ -101,7 +101,7 @@ const menu = [
       },
       {
         foodName: "Vegetarian Shoyu Ramen",
-        category: "Main Dishes",
+        category: "Main",
         price: 10.99,
         alcBev: false,
         nonAlc: false,
@@ -116,7 +116,7 @@ const menu = [
     //sandwiches
     {
         foodName: "California Sandwich",
-        category: "Main Dishes",
+        category: "Main",
         price: 9.99,
         alcBev: false,
         nonAlc: false,
@@ -130,7 +130,7 @@ const menu = [
       },
       {
         foodName: "Katsu Chicken Sandwich",
-        category: "Main Dishes",
+        category: "Main",
         price: 12.99,
         alcBev: false,
         nonAlc: false,
@@ -144,7 +144,7 @@ const menu = [
       },
       {
         foodName: "Turkey Sandwich",
-        category: "Main Dishes",
+        category: "Main",
         price: 8.99,
         alcBev: false,
         nonAlc: false,
@@ -202,7 +202,7 @@ const menu = [
 // side dishes
       {
         foodName: "Edamame",
-        category: "Side Dishes",
+        category: "Side",
         price: 4.99,
         alcBev: false,
         nonAlc: false,
@@ -216,7 +216,7 @@ const menu = [
       },
       {
         foodName: "Agedashi Tofu",
-        category: "Side Dishes",
+        category: "Side",
         price: 6.99,
         alcBev: false,
         nonAlc: false,
@@ -230,7 +230,7 @@ const menu = [
       },
       {
         foodName: "Takoyaki",
-        category: "Side Dishes",
+        category: "Side",
         price: 8.99,
         alcBev: false,
         nonAlc: false,
@@ -244,7 +244,7 @@ const menu = [
       },
       {
         foodName: "Gyoza",
-        category: "Side Dishes",
+        category: "Side",
         price: 7.99,
         alcBev: false,
         nonAlc: false,
@@ -258,7 +258,7 @@ const menu = [
       },
       {
         foodName: "Tempura",
-        category: "Side Dishes",
+        category: "Side",
         price: 9.99,
         alcBev: false,
         nonAlc: false,
@@ -542,7 +542,7 @@ const menu = [
 //non alcohols
       {
         foodName: "Classic Lemonade",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 4.99,
         alcBev: false,
         nonAlc: true,
@@ -556,7 +556,7 @@ const menu = [
       },
       {
         foodName: "Mango Tango Smoothie",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 5.99,
         alcBev: false,
         nonAlc: true,
@@ -570,7 +570,7 @@ const menu = [
       },
       {
         foodName: "Matcha Latte",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 6.99,
         alcBev: false,
         nonAlc: true,
@@ -584,7 +584,7 @@ const menu = [
       },
       {
         foodName: "Strawberry Bubble Tea",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 5.99,
         alcBev: false,
         nonAlc: true,
@@ -598,7 +598,7 @@ const menu = [
       },
       {
         foodName: "Blueberry Mint Sparkler",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 6.99,
         alcBev: false,
         nonAlc: true,
@@ -612,7 +612,7 @@ const menu = [
       },
       {
         foodName: "Pineapple Coconut Smoothie",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 5.99,
         alcBev: false,
         nonAlc: true,
@@ -626,7 +626,7 @@ const menu = [
       },
       {
         foodName: "Honeydew Milk Tea",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 6.99,
         alcBev: false,
         nonAlc: true,
@@ -640,7 +640,7 @@ const menu = [
       },
       {
         foodName: "Raspberry Lemonade",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 4.99,
         alcBev: false,
         nonAlc: true,
@@ -654,7 +654,7 @@ const menu = [
       },
       {
         foodName: "Passion Fruit Iced Tea",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 5.99,
         alcBev: false,
         nonAlc: true,
@@ -668,7 +668,7 @@ const menu = [
       },
       {
         foodName: "Watermelon Slush",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 6.99,
         alcBev: false,
         nonAlc: true,
@@ -682,7 +682,7 @@ const menu = [
       },
       {
         foodName: "Peach Berry Smoothie",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 5.99,
         alcBev: false,
         nonAlc: true,
@@ -696,7 +696,7 @@ const menu = [
       },
       {
         foodName: "Coca-Cola",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 2.99,
         alcBev: false,
         nonAlc: true,
@@ -710,7 +710,7 @@ const menu = [
       },
       {
         foodName: "Pepsi",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 2.99,
         alcBev: false,
         nonAlc: true,
@@ -724,7 +724,7 @@ const menu = [
       },
       {
         foodName: "Sprite",
-        category: "Non-Alcoholic Beverages",
+        category: "Drinks",
         price: 2.99,
         alcBev: false,
         nonAlc: true,
@@ -738,3 +738,5 @@ const menu = [
       },
 ]
 export {menu};
+
+

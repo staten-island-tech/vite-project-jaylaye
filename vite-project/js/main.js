@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   buttons.forEach(button => {
     button.addEventListener('click', function () {
-      const category = this.id.substring(3).toLowerCase(theme);
+      const category = this.id.substring(3).toLowerCase();
       
     });
   });
@@ -34,7 +34,7 @@ const buttons = {
   },
   filterAppetizers: function () {
     menu
-      .filter((food) => food.category == "Appetizers")
+      .filter((food) => food.category.includes("Appetizers"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -46,10 +46,10 @@ const buttons = {
         );
       });
   },
-
+  
   filterSoup: function () {
     menu
-      .filter((food) => food.category == "Soup")
+      .filter((food) => food.category.includes("Soup"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -61,10 +61,10 @@ const buttons = {
         );
       });
   },
-
+  
   filterSalads: function () {
     menu
-      .filter((food) => food.category == "Salads")
+      .filter((food) => food.category.includes("Salads"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -76,9 +76,10 @@ const buttons = {
         );
       });
   },
+  
   filterMainDishes: function () {
     menu
-      .filter((food) => food.category == "Main Dishes")
+      .filter((food) => food.category.includes("Main"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -90,9 +91,10 @@ const buttons = {
         );
       });
   },
+  
   filterSpecials: function () {
     menu
-      .filter((food) => food.category == "Specials")
+      .filter((food) => food.category.includes("Special"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -104,10 +106,10 @@ const buttons = {
         );
       });
   },
-
+  
   filterSideDishes: function () {
     menu
-      .filter((food) => food.category == "Specials")
+      .filter((food) => food.category.includes("Side"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -119,10 +121,11 @@ const buttons = {
         );
       });
   },
+  
 
   filterKidsMenu: function () {
     menu
-      .filter((food) => food.category == "Kids Menu")
+      .filter((food) => food.category.includes("Kids Menu"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -134,25 +137,10 @@ const buttons = {
         );
       });
   },
-
-  filterChefRecommendations: function () {
-    menu
-      .filter((food) => food.category == "Chef Recommendations")
-      .forEach((food) => {
-        DOMSelectors.box.insertAdjacentHTML(
-          "beforeend",
-          `<div class="card">
-            <p>${food.foodName}</p>
-            <img src="${food.image}" alt="${food.foodName}">
-            <p>$${food.price}</p>
-          </div>`
-        );
-      });
-  },
-
+  
   filterDesserts: function () {
     menu
-      .filter((food) => food.category == "Desserts")
+      .filter((food) => food.category.includes("Desserts"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -164,10 +152,25 @@ const buttons = {
         );
       });
   },
-
+    
+  filterChefRecommendations: function () {
+    menu
+      .filter((food) => food.chefsRec)
+      .forEach((food) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+            <p>${food.foodName}</p>
+            <img src="${food.image}" alt="${food.foodName}">
+            <p>$${food.price}</p>
+          </div>`
+        );
+      });
+  },
+  
   filterAlcoholicBeverages: function () {
     menu
-      .filter((food) => food.category == "Alcoholic Beverages")
+      .filter((food) => food.category.includes("Alcoholic Beverages"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -179,10 +182,10 @@ const buttons = {
         );
       });
   },
-
-  filternonAlc: function () {
+  
+  filterDrinks: function () {
     menu
-      .filter((food) => food.category == "Non Alcoholic Beverages")
+      .filter((food) => food.category.includes("Drinks"))
       .forEach((food) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
@@ -190,12 +193,12 @@ const buttons = {
             <p>${food.foodName}</p>
             <img src="${food.image}" alt="${food.foodName}">
             <p>${food.price}</p>
-            <h3>${food.category}</h3>
+            <h3>${food.categories}</h3>
           </div>`
         );
       });
   },
-
+  
 
   remove: function () {
     let cards = document.querySelectorAll(".card");
@@ -260,6 +263,7 @@ DOMSelectors.button8.addEventListener("click", function () {
   buttons.filterChefRecommendations();
 });
 
+
 DOMSelectors.button9.addEventListener("click", function () {
   buttons.remove();
   buttons.filterDesserts();
@@ -267,7 +271,7 @@ DOMSelectors.button9.addEventListener("click", function () {
 
 DOMSelectors.button10.addEventListener("click", function () {
   buttons.remove();
-  buttons.filternonAlc();
+  buttons.filterDrinks();
 });
 
 DOMSelectors.button11.addEventListener("click", function () {
