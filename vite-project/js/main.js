@@ -193,7 +193,7 @@ const buttons = {
             <p>${food.foodName}</p>
             <img src="${food.image}" alt="${food.foodName}">
             <p>${food.price}</p>
-            <h3>${food.categories}</h3>
+            <h3>${food.category}</h3>
           </div>`
         );
       });
